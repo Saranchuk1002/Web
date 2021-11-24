@@ -1,0 +1,23 @@
+{% from "/macros/btn.twig" import btn as btn %}
+ {% extends "__layout.twig" %}
+
+ {% block content %}
+
+ <div class="d-flex flex-wrap justify-content-center" >
+    {% for object in memes_objects %}
+    <div class="d-flex flex-column justify-content-center" style="border: 1px solid gray; padding:5px; margin:5px;">
+      <div>
+        <img src={{ object.images }} style="object-fit:contain; width: 300px; height: 300px; padding: 4px; margin-top: 5px;" class="nav-link">
+      </div>
+      <div class="d-flex" m>
+        {{ btn(object.title, "", true) }}
+      </div>
+      <div class="d-flex">
+        {{ btn("Картинка", "", false) }}
+        {{ btn("Описание", "", false) }}
+      </div>
+
+    </div>
+  {% endfor %}
+</div>
+   {% endblock %} 

@@ -1,0 +1,29 @@
+{% extends "__layout.twig" %}
+{% from "/macros/btn.twig" import btn as btn %}
+
+
+{% block content %}
+    
+{# <div style="border: 1px solid gray; padding:5px; margin:5px;">
+    {{team_f.description}}
+</div> #}
+
+    <div style="margin-left: 305px;">
+            <ul class="nav nav-pills" style="margin-top: 25px;">
+                
+                <li class="nav-item d-flex flex-row">
+                    
+
+                    {{ btn("Картинка", url~"/image", is_image) }}
+                     {{ btn("Описание", url~"/info", is_info) }}
+                </li>
+            </ul>
+        
+    </div>
+
+    {% block objectContent %}
+        
+    {% endblock %}
+
+
+{% endblock %}
