@@ -37,18 +37,14 @@ class Router {
     // функция которая должна по url найти маршрут и вызывать его функцию get
     // если маршрут не найден, то будет использоваться контроллер по умолчанию
     public function get_or_default($default_controller) {
-        $url = $_SERVER["REQUEST_URI"]; // получили url
+        $url = $_SERVER["REQUEST_URI"]; 
 
-        // фиксируем в контроллер $default_controller
+        $path = parse_url($url, PHP_URL_PATH);
         $controller = $default_controller;
         $matches = [];
-        // проходим по списку $routes 
         foreach($this->routes as $route) {
-            // проверяем подходит ли маршрут под шаблон
-            if (preg_match($route->route_regexp, $url, $matches)) {
-                // если подходит, то фиксируем привязанные к шаблону контроллер 
+            if (preg_match($route->route_regexp, $path, $matches)) {
                 $controller = $route->controller;
-               // и выходим из цикла
                 break;
             }
         }

@@ -9,8 +9,8 @@
             <ul class="nav nav-pills" style="margin-top: 25px;">
                 
                 <li class="nav-item d-flex flex-row">
-                    <a class = "btn btn-link" href="/memes_objects/{{id}}/image">Картинка</a>
-                    <a class = "btn btn-link" href="/memes_objects/{{id}}/info">Описание</a>
+                    {{ btn("Картинка", "/memes_objects/"~id~"/image", is_image) }}
+                     {{ btn("Описание", "/memes_objects/"~id~"/info", is_info) }}
                 </li>
             </ul>
         

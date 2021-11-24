@@ -1,16 +1,13 @@
 <?php
-class ObjectImageController extends ObjectController{
+require_once "ObjectController.php";
+
+class ObjectImageController extends ObjectController {
     public $template = "image.twig";
-    public function getContext():array
+
+    public function getContext(): array
     {
-        $context = parent::getContext();
-
-        $query = $this->pdo->prepare("SELECT images, id FROM memes_objects WHERE id= :id");
-        $query->bindValue("id", $this->params['id']);
-        $query->execute(); 
-        $data = $query->fetch();
-
-        $context['images'] = $data['images'];
+        $context = parent::getContext(); 
+        $context['is_image'] = true;
 
         return $context;
     }
