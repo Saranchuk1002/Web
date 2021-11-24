@@ -15,7 +15,7 @@ You can pass attributes to tweak the output:
     {{ '12.345'|format_number({rounding_mode: 'floor'}) }}
 
     {# 1000000.0000 #}
-    {{ '1000000'|format_number({fraction_digit: 4}) }}
+    {{ '1000000'|format_number({memes_objects_digit: 4}) }}
 
 The list of supported options:
 
@@ -24,9 +24,9 @@ The list of supported options:
 * ``max_integer_digit``;
 * ``min_integer_digit``;
 * ``integer_digit``;
-* ``max_fraction_digit``;
-* ``min_fraction_digit``;
-* ``fraction_digit``;
+* ``max_memes_objects_digit``;
+* ``min_memes_objects_digit``;
+* ``memes_objects_digit``;
 * ``multiplier``;
 * ``grouping_size``;
 * ``rounding_mode``;
@@ -78,7 +78,7 @@ You can pass attributes to tweak the output:
 .. code-block:: twig
 
     {# 12.3% #}
-    {{ '0.12345'|format_percent_number({rounding_mode: 'floor', fraction_digit: 1}) }}
+    {{ '0.12345'|format_percent_number({rounding_mode: 'floor', memes_objects_digit: 1}) }}
 
 By default, the filter uses the current locale. You can pass it explicitly:
 

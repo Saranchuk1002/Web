@@ -16,7 +16,7 @@ You can pass attributes to tweak the output:
     {{ '12.345'|format_currency('EUR', {rounding_mode: 'floor'}) }}
 
     {# €1,000,000.0000 #}
-    {{ '1000000'|format_currency('EUR', {fraction_digit: 4}) }}
+    {{ '1000000'|format_currency('EUR', {memes_objects_digit: 4}) }}
 
 The list of supported options:
 
@@ -25,9 +25,9 @@ The list of supported options:
 * ``max_integer_digit``;
 * ``min_integer_digit``;
 * ``integer_digit``;
-* ``max_fraction_digit``;
-* ``min_fraction_digit``;
-* ``fraction_digit``;
+* ``max_memes_objects_digit``;
+* ``min_memes_objects_digit``;
+* ``memes_objects_digit``;
 * ``multiplier``;
 * ``grouping_size``;
 * ``rounding_mode``;

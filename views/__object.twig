@@ -3,27 +3,19 @@
 
 
 {% block content %}
-    
-{# <div style="border: 1px solid gray; padding:5px; margin:5px;">
-    {{team_f.description}}
-</div> #}
+
 
     <div style="margin-left: 305px;">
             <ul class="nav nav-pills" style="margin-top: 25px;">
                 
                 <li class="nav-item d-flex flex-row">
-                    
-
-                    {{ btn("Картинка", url~"/image", is_image) }}
-                     {{ btn("Описание", url~"/info", is_info) }}
+                    <a class = "btn btn-link" href="/memes_objects/{{id}}/image">Картинка</a>
+                    <a class = "btn btn-link" href="/memes_objects/{{id}}/info">Описание</a>
                 </li>
             </ul>
         
     </div>
 
-    {% block objectContent %}
-        
+    {% block objectContent %} 
     {% endblock %}
-
-
 {% endblock %}

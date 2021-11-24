@@ -39,6 +39,6 @@ The above example will be rendered as:
 Arguments
 ---------
 
-* ``size``: The size of the batch; fractional numbers will be rounded up
+* ``size``: The size of the batch; memes_objectsal numbers will be rounded up
 * ``fill``: Used to fill in missing items
 * ``preserve_keys``: Whether to preserve keys or not

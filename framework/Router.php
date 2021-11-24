@@ -1,5 +1,4 @@
 <?php
-
 // сначала создадим класс под один маршрут
 class Route {
     public string $route_regexp; // тут получается шаблона url
