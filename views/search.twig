@@ -1,0 +1,35 @@
+{% extends "__layout.twig" %}
+{% block content %}
+
+<h1>Поиск</h1>
+<form action="" class="mt-1">
+        <div class="row g-3">
+            <div class="col">
+                <select style = "height: 100%; margin-left:25px" name="type" class="form-select form-select-lg mb-1" >
+                    <option value="Все">Все</option>
+                    {% for type in types %}
+                    <option value="{{ type.type|title }}">{{ type.type|title }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col">
+                <input style = "height: 100%; margin-left:25px" type="text" class="form-control" name="title" placeholder="Название">
+            </div>
+            <div class="col">
+                <input style = "height: 100%; margin-left:25px" type="text" class="form-control" name="info" placeholder="Описание">
+            </div>
+            <div class="col">
+                <button style = "font-size: 1.25rem; height: 100%; width: 70%; margin-left:25px" class = "btn btn-primary" type="submit">Найти</button>
+            </div>
+        </div>
+</form>
+<div class="mt-2">
+    <ul class="list-group">
+        {% for object in objects %}
+        <li class="list-group-item">
+            <a style="font-size: 20px;" class = "btn btn-link" href="/memes_objects/{{object.id}}">{{object.title}}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

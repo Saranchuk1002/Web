@@ -40,7 +40,7 @@ class TwigBaseController extends BaseController {
     }
     
     
-    public function get() {
-        echo $this->twig->render($this->template, $this->getContext());
+    public function get(array $context) { // добавил аргумент в get
+        echo $this->twig->render($this->template, $context); // а тут поменяем getContext на просто $context
     }
 }

@@ -11,5 +11,7 @@ class BaseMemesTwigController extends TwigBaseController{
         $context['types'] = $types;
 
         return $context;
+
+        
     }
 }

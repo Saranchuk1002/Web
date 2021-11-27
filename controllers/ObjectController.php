@@ -11,12 +11,25 @@ class ObjectController extends BaseMemesTwigController {
         $query->bindValue("id", $this->params['id']);
         $query->execute();
         $data = $query->fetch();
-        $context['images'] = $data['images'];
-        $context['info'] = $data['info'];
+
         $context['title'] = $data['title'];
         $context['id'] = $data['id'];
-        $context['description'] = $data['description'];
         
+        if (isset($_GET['show']))
+        {
+            if(($_GET['show'])=='image')
+            {
+                $context['content']="images";
+                $context['contentt']=$data["images"];
+            }
+            if(($_GET['show'])=='info'){
+                $context['content']="info";
+                $context['contentt']=$data["info"];
+            }
+        }else{
+                $context['content']="description";
+                $context['contentt']=$data["description"];
+        }
 
         return $context;
     }
