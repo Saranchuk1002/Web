@@ -7,6 +7,7 @@ require_once "../controllers/Controller404.php";
 require_once "../controllers/SearchController.php";
 require_once "../controllers/MemesObjectCreateController.php";
 require_once "../controllers/TypesCreateController.php";
+require_once "../controllers/MemesObjectDeleteController.php";
 
 
 
@@ -23,7 +24,6 @@ $router->add("/memes_objects/(?P<id>\d+)/?", ObjectController::class);
 $router->add("/search", SearchController::class);
 $router->add("/create", MemesObjectCreateController::class);
 $router->add("/createtype", TypesCreateController::class);
-
-
+$router->add("/memes_objects/delete", MemesObjectDeleteController::class);
 
 $router->get_or_default(Controller404::class);
