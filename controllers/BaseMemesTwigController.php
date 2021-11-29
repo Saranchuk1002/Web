@@ -6,9 +6,9 @@ class BaseMemesTwigController extends TwigBaseController{
         $context = parent::getContext();
 
         // создаем запрос к БД
-        $query = $this->pdo->query("SELECT DISTINCT type FROM memes_objects ORDER BY 1");
+        $query = $this->pdo->query("SELECT DISTINCT title FROM type_table ORDER BY 1");
         $types = $query->fetchAll();
-        $context['types'] = $types;
+        $context['newtypes'] = $types;
 
         return $context;
 

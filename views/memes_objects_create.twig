@@ -22,8 +22,11 @@
         <div class="col-4">
             <label class="form-label">Тип</label>
             <select class="form-control" name="type">
-                <option value="добрый">Добрый</option>
-                <option value="забавный">Забавный</option>
+                {% for type in newtypes %}
+                <li class="nav-item">
+                    <option value="{{ type.title|title }}">{{ type.title|title }}</option>
+                </li>
+                {% endfor %}
             </select>
         </div>
         <div class="mb-3">

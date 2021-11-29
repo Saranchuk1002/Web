@@ -19,17 +19,19 @@
                 
             <ul class="navbar-nav">
                 <a class="nav-link active" aria-current="page" href="/">Главная</a>
-                {% for type in types %}
-    <li class="nav-item">
-        <!-- добавил href="/?type={{ type.type }}" -->
-        <a class="nav-link" href="/?type={{ type.type }}">{{ type.type|title }}</a>
-    </li>
+{% for type in newtypes %}
+                <li class="nav-item">
+                    <a class="nav-link" href="/?type={{ type.title }}">{{ type.title|title }}</a>
+                </li>
 {% endfor %}
 <li>
     <a class="nav-link active" aria-current = "page" href="/search">Поиск</a>
 </li>
 <li>
     <a class="nav-link active" aria-current = "page" href="/create">Добавить</a>
+</li>
+<li>
+    <a class="nav-link active" aria-current = "page" href="/createtype">Типы</a>
 </li>
             </ul>
             </div>
