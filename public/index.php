@@ -8,6 +8,8 @@ require_once "../controllers/SearchController.php";
 require_once "../controllers/MemesObjectCreateController.php";
 require_once "../controllers/TypesCreateController.php";
 require_once "../controllers/MemesObjectDeleteController.php";
+require_once "../controllers/UpdateController.php";
+require_once "../api/restApiController.php";
 
 
 
@@ -25,5 +27,7 @@ $router->add("/search", SearchController::class);
 $router->add("/create", MemesObjectCreateController::class);
 $router->add("/createtype", TypesCreateController::class);
 $router->add("/memes_objects/delete", MemesObjectDeleteController::class);
+$router->add("/update/(?P<id>\d+)", UpdateController::class);
+$router->add("/api/rest", restApiController::class);
 
 $router->get_or_default(Controller404::class);
