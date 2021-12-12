@@ -18,6 +18,7 @@ class MainController extends BaseMemesTwigController{
         }
 
         $context['memes_objects'] = $query->fetchAll();
+        $context['viewed_pages'] = $_SESSION['viewed_pages'];
 
         return $context;
     }

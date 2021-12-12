@@ -14,6 +14,8 @@ class ObjectController extends BaseMemesTwigController {
 
         $context['title'] = $data['title'];
         $context['id'] = $data['id'];
+        $context["my_session_message"] = isset($_SESSION['welcome_message']) ? $_SESSION['welcome_message'] : "";
+        $context["messages"] = isset($_SESSION['messages']) ? $_SESSION['messages'] : "";
         
         if (isset($_GET['show']))
         {

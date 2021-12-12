@@ -4,28 +4,27 @@
 
 {% block content %}
 
+	<div style="margin-left: 305px;">
+		<ul class="nav nav-pills" style="margin-top: 25px;">
 
-    <div style="margin-left: 305px;">
-            <ul class="nav nav-pills" style="margin-top: 25px;">
-                
-                <li class="nav-item d-flex flex-row">
-                    {% if content != "images"%}
-                    {{ btn("Картинка", "/memes_objects/"~id~"/?show=image", is_image) }}
-                    {% endif %}
-                    {% if content != "info"%}
-                     {{ btn("Описание", "/memes_objects/"~id~"/?show=info", is_info) }}
-                     {% endif %}                   
-                </li>
-            </ul>
-        
-    </div>
-    {% if content == "images"%}
-      <img src="{{contentt}}" style=" border: 1px solid black; padding: 4px; width: 1000px;"/>
-      {% endif %}
-      {% if content == "info"%}
-      <p style="border: 1px solid black; padding: 4px; margin-top: 5px; width: 1600px;">"{{contentt}}"</p>
-      {% endif %}
-      {% if content == "description"%}
-      <p style="border: 1px solid black; padding: 4px; margin-top: 5px; width: 1600px;">"{{contentt}}"</p>
-      {% endif %}
+			<li class="nav-item d-flex flex-row">
+				{% if content != "images"%}
+					{{ btn("Картинка", "/memes_objects/"~id~"/?show=image", is_image) }}
+				{% endif %}
+				{% if content != "info"%}
+					{{ btn("Описание", "/memes_objects/"~id~"/?show=info", is_info) }}
+				{% endif %}
+			</li>
+		</ul>
+
+	</div>
+	{% if content == "images"%}
+		<img src="{{contentt}}" style=" border: 1px solid black; padding: 4px; width: 1000px;"/>
+	{% endif %}
+	{% if content == "info"%}
+		<p style="border: 1px solid black; padding: 4px; margin-top: 5px; width: 1600px;">"{{contentt}}"</p>
+	{% endif %}
+	{% if content == "description"%}
+		<p style="border: 1px solid black; padding: 4px; margin-top: 5px; width: 1600px;">"{{contentt}}"</p>
+	{% endif %}
 {% endblock %}

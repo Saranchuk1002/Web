@@ -21,6 +21,9 @@ abstract class BaseController {
     
     // новая функция
     public function process_response() {
+        session_set_cookie_params(60*60*10);
+        session_start();
+
         $method = $_SERVER['REQUEST_METHOD'];
         $context = $this->getContext(); // вызываю context тут
         if ($method == 'GET') {

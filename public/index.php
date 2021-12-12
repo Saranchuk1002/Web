@@ -10,6 +10,7 @@ require_once "../controllers/TypesCreateController.php";
 require_once "../controllers/MemesObjectDeleteController.php";
 require_once "../controllers/UpdateController.php";
 require_once "../api/restApiController.php";
+require_once "../middlewares/LoginRequiredMiddleware.php";
 
 
 
@@ -24,10 +25,13 @@ $router = new Router($twig, $pdo);
 $router->add("/", MainController::class);
 $router->add("/memes_objects/(?P<id>\d+)/?", ObjectController::class); 
 $router->add("/search", SearchController::class);
-$router->add("/create", MemesObjectCreateController::class);
-$router->add("/createtype", TypesCreateController::class);
-$router->add("/memes_objects/delete", MemesObjectDeleteController::class);
-$router->add("/update/(?P<id>\d+)", UpdateController::class);
-$router->add("/api/rest", restApiController::class);
-
+$router->add("/create", MemesObjectCreateController::class)
+        ->middleware(new LoginRequiredMiddleware());
+$router->add("/createtype", TypesCreateController::class)
+        ->middleware(new LoginRequiredMiddleware());
+$router->add("/memes_objects/delete", MemesObjectDeleteController::class)
+        ->middleware(new LoginRequiredMiddleware());
+$router->add("/update/(?P<id>\d+)", UpdateController::class)
+        ->middleware(new LoginRequiredMiddleware());
 $router->get_or_default(Controller404::class);
+

@@ -1,36 +1,36 @@
 {% extends "__layout.twig" %}
 {% block content %}
-<div class="row d-flex">
-        {% for object in memes_objects %}
-        <div class="col mb-4 d-flex align-items-stretch">
-            <div class="border p-2 flex-grow-1 d-flex flex-column justify-content-between position-relative">
-                <div class = "position-absolute" style = "right: 0px; top: 4px;">
-                    <form action = "/memes_objects/delete" method = "POST">
-                        <input type = "hidden" name = "id" value="{{object.id}}">
-                        <button type = "submit" class="btn btn-danger">   
-                            <i class = "fas fa-times"></i>
-                        </button>
-                    </form>
-                </div>
-                <div class = "position-absolute" style = "right: 45px; top: 5px;">
-                    <form action = "/update/{{object.id}}">
-                        <input type = "hidden" name = "id" value="{{object.id}}">
-                        <button type = "submit" class="btn btn-info">   
-                            <i class="fas fa-edit"></i>
-                        </button>
-                    </form>
-                </div>
-                <div class="img-thumbnail mb-2" style="width: 100%; height:200px; overflow:hidden">
-                <img class = "image-thumbnail mb-2" src="{{object.images}}" style="width: 100%; height:200px;  object-fit:cover;"/>
-                </div>
-                <div class="d-flex flex-column">
-                    <a class = "btn btn-primary mb-1" href="/memes_objects/{{object.id}}">{{object.title}}</a>
-                    <div class="d-flex justify-content-center">
-                        <a class = "btn btn-link" href="/memes_objects/{{object.id}}/?show=image">Картинка</a>
-                        <a class = "btn btn-link" href="/memes_objects/{{object.id}}/?show=info">Описание</a>
-                </div> 
-            </div>
-        </div>
-</div>
-{% endfor %}
-{% endblock %}
+	<div class="row col-10">
+		{% for object in memes_objects %}
+			<div class="col-4 mb-4 d-flex align-items-stretch">
+				<div class="border p-2 flex-grow-1 d-flex flex-column justify-content-between position-relative">
+					<div class="position-absolute" style="right: 0px; top: 4px;">
+						<form action="/memes_objects/delete" method="POST">
+							<input type="hidden" name="id" value="{{object.id}}">
+							<button type="submit" class="btn btn-danger">
+								<i class="fas fa-times"></i>
+							</button>
+						</form>
+					</div>
+					<div class="position-absolute" style="right: 45px; top: 5px;">
+						<form action="/update/{{object.id}}">
+							<input type="hidden" name="id" value="{{object.id}}">
+							<button type="submit" class="btn btn-info">
+								<i class="fas fa-edit"></i>
+							</button>
+						</form>
+					</div>
+					<div class="img-thumbnail mb-2" style="width: 100%; height:200px; overflow:hidden">
+						<img class="image-thumbnail mb-2" src="{{object.images}}" style="width: 100%; height:200px;  object-fit:cover;"/>
+					</div>
+					<div class="d-flex flex-column">
+						<a class="btn btn-primary mb-1" href="/memes_objects/{{object.id}}">{{object.title}}</a>
+						<div class="d-flex justify-content-center">
+							<a class="btn btn-link" href="/memes_objects/{{object.id}}/?show=image">Картинка</a>
+							<a class="btn btn-link" href="/memes_objects/{{object.id}}/?show=info">Описание</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		{% endfor %}
+	{% endblock %}
